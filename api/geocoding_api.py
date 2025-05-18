@@ -13,7 +13,7 @@ class GeocodingAPI:
             results = pycountry.countries.search_fuzzy(country_name)
             return results[0].alpha_2
         except LookupError:
-            return "ERROR"
+            return
 
     def getLocation(self, city_name, country_code):
         request = f"{self.url}{city_name},{country_code}&limit=5&appid={self.api_key}"
