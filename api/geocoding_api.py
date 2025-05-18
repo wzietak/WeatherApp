@@ -1,5 +1,7 @@
 import pycountry
 import requests
+from requests import JSONDecodeError
+
 
 class GeocodingAPI:
     def __init__(self):
@@ -8,20 +10,20 @@ class GeocodingAPI:
 
     def convertCountryToISOCode(self, country_name):
         try:
-            return pycountry.countries.search_fuzzy(country_name)
+            results = pycountry.countries.search_fuzzy(country_name)
+            return results[0].alpha_2
         except LookupError:
-            return
+            return "ERROR"
 
     def getLocation(self, city_name, country_code):
         request = f"{self.url}{city_name},{country_code}&limit=5&appid={self.api_key}"
+        try:
+            response = requests.get(request)
+            data = response.json()
+        except JSONDecodeError:
+            return None
 
-        response = requests.get(request)
-        data = response.json()
-        # print(data)
         return data
-      # tu wyświetlać użytkownikowi listę znalezionych lokalizacji do wyboru czy coś
-
-
 
 
 
