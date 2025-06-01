@@ -74,8 +74,8 @@ def location_form(form_key="location_form",historical=False):
         country_input = st.text_input("Country")
         if historical:
             st.write("Choose date range:")
-            start_date_input = st.date_input("Start date", value=date.today()-relativedelta(years=1),min_value=date.today()-relativedelta(years=50,days=1), max_value=date.today()-relativedelta(days=3), format="DD/MM/YYYY")
-            end_date_input = st.date_input("End date", min_value=date.today()-relativedelta(years=50),max_value=date.today()-relativedelta(days=2), format="DD/MM/YYYY")
+            start_date_input = st.date_input("Start date", value=date.today()-relativedelta(years=1),min_value=date.today()-relativedelta(years=20,days=1), max_value=date.today()-relativedelta(days=3), format="DD/MM/YYYY")
+            end_date_input = st.date_input("End date", min_value=date.today()-relativedelta(years=20),max_value=date.today()-relativedelta(days=2), format="DD/MM/YYYY")
         search_button = st.form_submit_button("Search", type="primary")
 
     if historical:
