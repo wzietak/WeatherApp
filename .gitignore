@@ -5,6 +5,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.cache.sqlite
+.cache.sqlite-journal
+.cache/
+
 # C extensions
 *.so
 
