@@ -1,8 +1,6 @@
 import openmeteo_requests
 import pandas as pd
 
-
-
 class HistoricalWeatherAPI:
     def __init__(self):
         self.url = "https://archive-api.open-meteo.com/v1/archive"

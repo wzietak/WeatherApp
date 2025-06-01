@@ -1,13 +1,14 @@
 import requests
+import streamlit as st
 
 class WeatherAPI:
     def __init__(self):
-        self.api_key = "***REMOVED***"
+        self.API_KEY = st.secrets["api"]["key"]
         self.url = "https://api.openweathermap.org/data/2.5/weather?lat="
         self.url_historic = "https://api.openweathermap.org/data/3.0/onecall/timemachine?lat="
 
     def getWeatherForLocation(self, lat, lon):
-        request = f"{self.url}{lat}&lon={lon}&units=metric&appid={self.api_key}"
+        request = f"{self.url}{lat}&lon={lon}&units=metric&appid={self.API_KEY}"
         response = requests.get(request)
         data = response.json()
         return data
