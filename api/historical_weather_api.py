@@ -1,15 +1,12 @@
 import openmeteo_requests
 import pandas as pd
-import requests_cache
-from retry_requests import retry
+
 
 
 class HistoricalWeatherAPI:
     def __init__(self):
         self.url = "https://archive-api.open-meteo.com/v1/archive"
-        self.cache_session = requests_cache.CachedSession('.cache', expire_after=-1)
-        self.retry_session = retry(self.cache_session, retries=5, backoff_factor=0.2)
-        self.openmeteo = openmeteo_requests.Client(session=self.retry_session)
+        self.openmeteo = openmeteo_requests.Client()
 
     def getHistoricalWeatherData(self, lat, lon, start_date, end_date):
         params = {
