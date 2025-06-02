@@ -10,8 +10,8 @@ A user-friendly weather application built with **Streamlit**. It allows you to:
 ## ✨ Features
 
 - 🌍 Input by **city** and **country** name.
-- ☀️ Real-time weather: temperature, humidity, cloudiness, wind, pressure.
-- 📊 Historical weather: daily temperature, humidity, wind speed, cloud cover, precipitation, and pressure.
+- ☀️ Real-time weather: temperature, humidity, cloudiness, wind, pressure, rain, snow.
+- 📊 Historical weather: temperature, humidity, wind speed, cloudiness, precipitation, and pressure.
 - 🗓️ Date range selection for historical data.
 - 🧭 Built-in country code conversion using `pycountry`.
 - 📁 Uses Streamlit session state to manage responses.
