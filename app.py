@@ -8,7 +8,7 @@ from api.historical_weather_api import HistoricalWeatherAPI
 from api.weather_api import WeatherAPI
 from weather.weather import Weather
 
-def show_the_weather(weather, city_name, country_name):
+def show_curr_weather(weather, city_name, country_name):
     """
     Wyświetla aktualną pogodę dla podanej lokalizacji w zakładce 'Current weather'.
 
@@ -18,7 +18,7 @@ def show_the_weather(weather, city_name, country_name):
         country_name (str): nazwa kraju
     """
     st.header(f"Weather in {city_name}, {country_name}")
-    st.caption(f"Last update at: {weather.time}")
+    st.caption(f"Last update on: {weather.time}")
     col1, col2 = st.columns([1,10], vertical_alignment="center")
     with col1:
         st.image(f"{weather.icon_url}{weather.icon}@2x.png", width=80)
@@ -154,7 +154,7 @@ def handle_weather(city_input,country_input,search_button,start_date=None,end_da
                 if not historical:
                     curr_weather_data = weather_data.getWeatherForLocation(chosen_location["lat"], chosen_location["lon"])
                     curr_weather = Weather.parseTheWeather(curr_weather_data)
-                    show_the_weather(curr_weather, chosen_location["name"], chosen_location["country"])
+                    show_curr_weather(curr_weather, chosen_location["name"], chosen_location["country"])
                 else:
                     hist_weather,error = hist_weather_data.getHistoricalWeatherData(chosen_location["lat"], chosen_location["lon"],start_date, end_date)
                     if hist_weather is not None:
