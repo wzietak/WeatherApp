@@ -2,11 +2,34 @@ import openmeteo_requests
 import pandas as pd
 
 class HistoricalWeatherAPI:
+    """
+    Klasa odpowiedzialna za pobieranie historycznych danych pogodowych z Open-Meteo Historical Weather API.
+    """
     def __init__(self):
+        """
+        Inicjalizuje klienta Open-Meteo API i ustawia adres URL archiwum danych.
+        """
         self.url = "https://archive-api.open-meteo.com/v1/archive"
         self.openmeteo = openmeteo_requests.Client()
 
     def getHistoricalWeatherData(self, lat, lon, start_date, end_date):
+        """
+        Pobiera historyczne dane pogodowe dla podanej lokalizacji i zakresu dat.
+
+        Args:
+            lat (float): szerokość geograficzna lokalizacji
+            lon (float): długość geograficzna lokalizacji
+            start_date (str): data początkowa w formacie "YYYY-MM-DD"
+            end_date (str): data końcowa w formacie "YYYY-MM-DD"
+
+        Returns:
+            Jeśli wystąpi wyjątek:
+                None: brak ramki danych
+                str: komunikat błędu
+            Jeśli nie wystąpi wyjątek:
+                daily_dataframe (pd.DataFrame): ramka danych zawierająca dane dzienne dla ciśnienia, wilgotności, prędkości wiatru, temperatury, zachmurzenia i opadów
+                None: brak błędu
+        """
         params = {
             "latitude": lat,
             "longitude": lon,
