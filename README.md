@@ -42,15 +42,17 @@ A user-friendly weather application built with **Streamlit**. It allows you to:
 Clone the repository:
 ```
 git clone https://github.com/your-username/weather-app.git
-cd weather-app```
+cd weather-app
+```
 
 Install the required dependencies:
-```pip install -r requirements.txt```
+`pip install -r requirements.txt`
 
-Create a .streamlit/secrets.toml file for your API key
-```[api]
-key = "your_openweathermap_api_key"```
+Create a .streamlit/secrets.toml file for your API key:
+```
+[api]
+key = "your_openweathermap_api_key"
+```
 
-
-Run the App
-```streamlit run app.py```
+Run the App:
+`streamlit run app.py`
