@@ -57,4 +57,4 @@ key = "your_openweathermap_api_key"
 Run the App:
 `streamlit run app.py`
 
-> ⚠️ Please note: code comments and documentation strings are written in Polish, as this project was developed as part of a university course.
+> ⚠️ Please note: code comments and documentation strings are written in Polish, as this project was developed as part of a university course at Nicolaus Copernicus University in Toruń, Poland.
