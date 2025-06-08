@@ -21,11 +21,11 @@ A user-friendly weather application built with **Streamlit**. It allows you to:
 ## 📦 Tech Stack
 
 - **Python**
+  - `requests`
+  - `pandas`
+  - `openmeteo_requests`
+  - `pycountry`
 - **Streamlit**
-- `requests`
-- `pandas`
-- `openmeteo_requests`
-- `pycountry`
 - **APIs**: [OpenWeatherMap](https://openweathermap.org/api), [Open-Meteo](https://open-meteo.com)
 
 ---
