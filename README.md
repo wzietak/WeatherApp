@@ -10,8 +10,8 @@ A user-friendly weather application built with **Streamlit**. It allows you to:
 ## ✨ Features
 
 - 🌍 Input by **city** and **country** name.
-- ☀️ Real-time weather: temperature, humidity, cloudiness, wind, pressure.
-- 📊 Historical weather: daily temperature, humidity, wind speed, cloud cover, precipitation, and pressure.
+- ☀️ Real-time weather: temperature, humidity, cloudiness, wind, pressure, rain, snow.
+- 📊 Historical weather: temperature, humidity, wind speed, cloudiness, precipitation, and pressure.
 - 🗓️ Date range selection for historical data.
 - 🧭 Built-in country code conversion using `pycountry`.
 - 📁 Uses Streamlit session state to manage responses.
@@ -42,15 +42,19 @@ A user-friendly weather application built with **Streamlit**. It allows you to:
 Clone the repository:
 ```
 git clone https://github.com/your-username/weather-app.git
-cd weather-app```
+cd weather-app
+```
 
 Install the required dependencies:
-```pip install -r requirements.txt```
+`pip install -r requirements.txt`
 
-Create a .streamlit/secrets.toml file for your API key
-```[api]
-key = "your_openweathermap_api_key"```
+Create a .streamlit/secrets.toml file for your API key:
+```
+[api]
+key = "your_openweathermap_api_key"
+```
 
+Run the App:
+`streamlit run app.py`
 
-Run the App
-```streamlit run app.py```
+> ⚠️ Please note: code comments and documentation strings are written in Polish, as this project was developed as part of a university course at Nicolaus Copernicus University in Toruń, Poland.
